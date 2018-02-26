@@ -9,6 +9,6 @@
     }
     else 
     {
-       echo "Connect success!";
+       //echo "Connect success!";
     }
 ?>
