@@ -1,0 +1,97 @@
+    
+    /* text style og general style */    
+    body {
+        background-color: grey; line-height: 1; font-family: "Lucida", Monaco, monospace;
+      }
+      
+      .overskrift  {
+          position: absolute;
+          top: 5%;
+          left: 5%;
+          width: auto;
+          color: white;
+          background-color: black;
+          padding: 6px;
+          display: block;        
+      }
+      .skrift {
+          position: absolute;
+          top: 15%;
+          right: 5%;
+          font-size: 16px;
+          width: 40%;
+          padding: 10px;
+          background-color:white;
+          margin: 0;
+          border: solid 1px;
+      }
+      /* Style til dropdown menu 
+       Hvordan den ser ud */
+      .dropbtn {
+          background-color: rgb(28, 84, 121);
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+      }
+      /* Giver en hover effekt */
+      .dropbtn:hover, .dropbtn:focus {
+          background-color: #2980B9;
+      }
+      /* Hvor den er placeret på hjemmesiden */
+      .dropdown {
+          position: absolute;
+          display: inline-block;
+          top: 5%;
+          right: 5%;
+      }
+      /* Hvordan det der er inde i dropdownen ser ud 
+      z-index bestemmer hvad der er forest*/
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          overflow: auto;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1; 
+      }
+      /* Style til <a> i dropdown-content */
+      .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+      }
+      /* Hover effekt, denne gang i <a> */
+      .dropdown a:hover {
+          background-color: #f1f1f1
+      }
+      /* Toggle der skal bruges i vores script */
+      .show {
+          display:block;
+      }
+  
+      /* Style til slideshow */
+      * {box-sizing: border-box;}
+  body {font-family: Verdana, sans-serif;}
+  .mySlides {display: none;}
+  img {vertical-align: middle;}
+  
+  /* Slideshow size and placement */
+  .slideshow-container {
+    max-width: 92.4%;
+    position: relative;
+    top: 40%;
+    width: 100px;
+    right: 3%;
+    margin: auto;
+  }
+  
+  
+  /* Slideshow animation (fade function) */
+  .fade {
+    animation-name: fade;
+    animation-duration: 3s;
+  }

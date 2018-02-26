@@ -1,0 +1,39 @@
+1
+00:00:00,000 --> 00:00:04,500
+Dette er screencast over min blog
+lavet af Jacob
+2
+00:00:05,000 --> 00:00:18,000
+Hvis vi lige starter med at kigge på hjemmesidens funktioner
+Oppe i det øverste billede har vi hvor vi indsætter et blogindlæg
+3
+00:00:18,000 --> 00:00:35,000
+Der kan man skrive sit fornavn, efternavn, titel og broedtekst
+Når man er færdig med det trykker man indsæt
+PHP filen hedder Database_insert_k.php
+4
+00:00:38,000 --> 00:00:49,000 
+Så kan man gå videre til hentdata og her kan man se det data der
+ligger i vores database
+5
+00:00:50,000 --> 00:01:00,000 
+Man kan sortere efter fornavn, efternavn, titel, leangde og dato
+(jo jeg har)
+6
+00:01:05,000 --> 00:01:35,000
+Hvis vi kigger på tabellen i vores database før vi går videre, kan vi se
+oppe i toppen de forskellige rækker der i databasen
+Id vil altid blive højere når man indsætter en ny række.
+7
+00:01:40,000 --> 00:02:25,000
+Nu vil jeg forklare hvordan man indsætter dataen i vores database
+Først tjekker den om der er er trykket på "indsaet"
+Gvis der er det, vil den indsætte de første 4 variabler efter input felterne
+som er i superglobalen POST som vi får fra input felterne
+8
+00:02:26,000 --> 00:02:45,000
+Dag, måned år er en funktion som PHP har som hedder 'date'
+date d date m og date y man bruger d for dag m for måned og y for år
+9
+00:02:46,000 --> 00:03:00,000
+Det virker af en eller anden grund ikke at skrive captions efter 3 minutter
