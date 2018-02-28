@@ -6,7 +6,7 @@
 
 /* Set gray background color and 100% height */
 
-.sidenav {
+.sidenav{
   background-color: #f1f1f1;
 }
 
@@ -55,3 +55,24 @@ td {
   padding-top:40px;
   margin-top:-40px;
   }
+  .comment {
+    color:white;
+    background-color: #28a745;
+    border-bottom-color:white;
+    border-bottom-style:solid;
+    border-bottom-width: 24px;
+    border-radius: 25px 25px 0px 0px;
+  }
+  .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #28a745;
+  }
+  a {
+    color:#28a745;
+  }
+  a:hover {
+    color:black;
+}
+#posSpy {
+  background-color: white;
+}

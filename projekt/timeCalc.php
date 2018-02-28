@@ -1,3 +1,4 @@
+<?php
 function time_elapsed_string($datetime, $full = false) {
         $now = new DateTime;
         $ago = new DateTime($datetime);
@@ -26,3 +27,4 @@ function time_elapsed_string($datetime, $full = false) {
         if (!$full) $string = array_slice($string, 0, 1);
         return $string ? implode(', ', $string) . ' siden' : 'Lige nu';
     }
+?>

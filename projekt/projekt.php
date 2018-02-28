@@ -17,15 +17,12 @@
 
   <?php 
       include '..\connect.php';
-
+      include 'timeCalc.php';
       if (isset($_POST['submit'])) {
         $navn = $_POST['navn'];
         $broedtekst = $_POST['broedtext'];
-        $dag = date('d');
-	      $maaned = date('m');
-        $aar = date('y');
       
-        $mysqli->query("INSERT INTO $table4_db (navn, broedtext, dag, maaned, aar) VALUES ('$navn', '$broedtekst','$dag', '$maaned', '$aar')"); 
+        $mysqli->query("INSERT INTO $table4_db (navn, broedtext) VALUES ('$navn', '$broedtekst')"); 
         header("Location: projekt.php");
       }
     ?>
@@ -38,7 +35,7 @@
       <div class="col-sm-3 sidenav">
         <div id="fixednav">
           <h4>Indholdsfortegnelse</h4>
-          <nav id="posSpy" class="navbar navbar-light bg-light">
+          <nav id="posSpy" class="navbar navbar-light">
             <nav class="nav nav-pills flex-column">
               <a class="nav-link" href="#fimme">FIMME</a>
               <nav class="nav nav-pills flex-column">
@@ -142,15 +139,25 @@
           </div>
         </form>
         <?php
-      $result = $mysqli->query("SELECT id, navn, broedtext, dag, maaned, aar FROM $table4_db ORDER BY id");
-    
-      echo "<br><br><p><span class=\"badge badge-pill badge-success\">" . $result->num_rows . "</span> Spørgsmål:</p><br>";
-		while ( $row = $result->fetch_assoc() ) {
-		  echo"<div class=\"col-sm-10\">
-          <h4>" . $row['navn'] . "<small> ". $row['dag'] . "-" . $row['maaned'] . "-" . $row['aar'] ." </small></h4>
-          <p> ". $row['broedtext']."</p>
-          <br>
-        </div>";
+      $result = $mysqli->query("SELECT id, navn, broedtext, datotid FROM $table4_db ORDER BY id");    
+    if($mysqli->ping()){ //Hvis der er en connection til databasen, hvilket der ikke vil være når jeg aflevere
+      echo "<br><br><p><span class=\"badge badge-pill badge-success\">" . $result->num_rows . "</span> Spørgsmål:</p><hr>";
+      
+      while ( $row = $result->fetch_assoc() ) {
+        echo"<div class=\"col-sm-10 comment\">
+            <h4>" . $row['navn'] . "<small> ".time_elapsed_string($row['datotid'])."</small></h4>
+            <p> ". $row['broedtext']."</p> 
+          </div>";
+      }
+    }
+    else { //Placeholder så man kan se hvordan det ville se ud
+      echo "<br><br><p><span class=\"badge badge-pill badge-success\">1</span> Spørgsmål:</p><br>
+
+      <div class=\"col-sm-10 comment\">
+        <h4>Jacob Skadborg <small>5 dage siden </small></h4>
+        <p>Det her er et placeholder spørgsmål, den er kun aktiveret når der ikke er forbindelse til databasen. Ved forbindelse til databasen og flere kommentare, vil den næste kommentar automatisk blive sat ind under denne</p>
+        <br>
+      </div>";
     }
       $mysqli->close(); 
       ?>
