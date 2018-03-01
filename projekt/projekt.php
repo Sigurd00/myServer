@@ -59,10 +59,16 @@
       </div>
 
       <div class="col-sm-9" data-spy="scroll" data-target="#posSpy" data-offset="500">
-        <h4 id="fimme">
-          <small>
-            <b>FIMME - Sidste projekt i faget informationsteknologi på VTG 2016-2019</b>
-          </small>
+        <div>
+          <h4 id="fimme">
+            <small>
+              <b>FIMME - Sidste projekt i faget informationsteknologi på VTG 2016-2019</b>
+            </small>
+            <div class="btn-group text-white">
+              <a class="btn btn-success"> Projekt <a/>
+              <a class="btn btn-success"> Dokumentation af projektet <a/>
+            </div>
+          </div>
         </h4>
         <hr>
         <h2 class="scroll-adjust" id="f1">Formål</h2>
@@ -139,7 +145,7 @@
           </div>
         </form>
         <?php
-      $result = $mysqli->query("SELECT id, navn, broedtext, datotid FROM $table4_db ORDER BY id");    
+      $result = $mysqli->query("SELECT id, navn, broedtext, datotid FROM $table4_db ORDER BY id DESC");    
     if($mysqli->ping()){ //Hvis der er en connection til databasen, hvilket der ikke vil være når jeg aflevere
       echo "<br><br><p><span class=\"badge badge-pill badge-success\">" . $result->num_rows . "</span> Spørgsmål:</p><hr>";
       
