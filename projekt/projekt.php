@@ -65,10 +65,12 @@
               <b>FIMME - Sidste projekt i faget informationsteknologi på VTG 2016-2019</b>
             </small>
             <div class="btn-group text-white">
-              <a class="btn btn-success"> Projekt <a/>
-              <a class="btn btn-success"> Dokumentation af projektet <a/>
+              <a class="btn btn-success"> Projekt
+                <a/>
+                <a class="btn btn-success"> Dokumentation af projektet
+                  <a/>
             </div>
-          </div>
+        </div>
         </h4>
         <hr>
         <h2 class="scroll-adjust" id="f1">Formål</h2>
@@ -164,7 +166,7 @@
         <p>Det her er et placeholder spørgsmål, den er kun aktiveret når der ikke er forbindelse til databasen. Ved forbindelse til databasen og flere kommentare, vil den næste kommentar automatisk blive sat ind under denne</p>
         <br>
       </div>";
-    }
+    } 
       $mysqli->close(); 
       ?>
       </div>
